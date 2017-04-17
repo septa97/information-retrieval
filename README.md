@@ -1,5 +1,5 @@
-CMSC 191 Information Retrieval
-==================================
+CMSC 191 Information Retrieval Server
+=====================================
 
 Getting Started
 ---------------
