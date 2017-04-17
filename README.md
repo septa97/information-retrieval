@@ -9,6 +9,7 @@ Getting Started
 
 # Initialize the database
 mysql -uroot -puser < src/database/schema.sql
+node src/middleware/parser.js
 
 # Install dependencies
 sudo npm install -g nodemon

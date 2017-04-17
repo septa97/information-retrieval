@@ -28,9 +28,11 @@ function main() {
 					}
 
 					let review = reviewRegex.exec(line)[1];
+					let rating = parseFloat(s[0]);
+					let tail = s[1];
 					review = review.replace(/<br\/>/g, ' ');
 
-					db.query('INSERT INTO reviews (title, review) VALUES (?, ?);', [title, review], (err, result, fields) => {
+					db.query('INSERT INTO reviews (rating, tail, title, review) VALUES (?, ?, ?, ?);', [rating, tail, title, review], (err, result, fields) => {
 						if (err) {
 							throw new Error(err);
 						}
