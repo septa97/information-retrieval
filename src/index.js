@@ -15,16 +15,16 @@ app.server = http.createServer(app);
 app.use(morgan('dev'));
 
 // 3rd party middleware
-app.use(cors({
-	exposedHeaders: config.corsHeaders
+app.use(cors());
+
+app.use(bodyParser.urlencoded({
+	extended: false
 }));
 
-app.use(bodyParser.json({
-	limit : config.bodyLimit
-}));
+app.use(bodyParser.json());
 
 // connect to db
-initializeDb( db => {
+initializeDb(db => {
 
 	// internal middleware
 	app.use(middleware({ config, db }));
