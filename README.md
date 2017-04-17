@@ -7,6 +7,9 @@ Getting Started
 ```sh
 # Clone the repository
 
+# Initialize the database
+mysql -uroot -puser < src/database/schema.sql
+
 # Install dependencies
 sudo npm install -g nodemon
 npm install
