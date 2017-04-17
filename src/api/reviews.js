@@ -17,22 +17,21 @@ export default ({ config, db }) => resource({
 
 	/** GET / - List all entities */
 	index({ params }, res) {
-
-		db.query("SELECT * FROM reviews;", (err, result) => {
-
-			if(err) throw new Error(err);
+		db.query('SELECT * FROM reviews;', (err, result) => {
+			if (err) {
+				throw new Error(err);
+			}
+			
 			res.json(result);
 		});
 	},
 
 	/** POST / - Create a new entity */
 	create({ body }, res) {
-		// body.id = reviews.length.toString(36);
-		// reviews.push(body);
-		// res.json(body);
-
-		db.query("INSERT INTO reviews (title, review) VALUES (?, ?);", [body.title, body.review], (err, result) => {
-			if(err) throw new Error(err);
+		db.query('INSERT INTO reviews (title, review) VALUES (?, ?);', [body.title, body.review], (err, result) => {
+			if (err) {
+				throw new Error(err);
+			}
 
 			res.json(result);
 		});
