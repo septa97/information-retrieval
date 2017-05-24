@@ -7,7 +7,7 @@ export default ({ config, db }) => {
 	let api = Router();
 
 	api.use('/reviews', reviews({ config, db }));
-	api.get('/search', search_engine.search1);
+	api.get('/search', search_engine.search);
 
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {
